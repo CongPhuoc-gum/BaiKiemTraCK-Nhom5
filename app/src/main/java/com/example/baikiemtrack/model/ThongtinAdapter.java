@@ -24,7 +24,7 @@ public class ThongtinAdapter extends RecyclerView.Adapter<ThongtinAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_user, parent, false);
+                .inflate(R.layout.thongtin_row, parent, false);
         return new ViewHolder(view);
     }
 
@@ -46,9 +46,9 @@ public class ThongtinAdapter extends RecyclerView.Adapter<ThongtinAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.txt_name);
-            msv = itemView.findViewById(R.id.txt_msv);
-            lop = itemView.findViewById(R.id.txt_lop);
+            name = itemView.findViewById(R.id.tv_name);
+            msv = itemView.findViewById(R.id.tv_msv);
+            lop = itemView.findViewById(R.id.tv_class);
         }
     }
 }

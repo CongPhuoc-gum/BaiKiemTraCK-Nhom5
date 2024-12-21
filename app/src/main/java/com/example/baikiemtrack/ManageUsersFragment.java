@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.baikiemtrack.model.Thongtin;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +30,7 @@ import java.util.UUID;
 public class ManageUsersFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private UserAdapter userAdapter;
+    private com.example.baikiemtrack.adapter.ThongtinAdapter userAdapter;
     private ArrayList<User> userList;
     private DatabaseReference databaseReference;
 
@@ -116,54 +117,11 @@ public class ManageUsersFragment extends Fragment {
         }
     }
 
-    private void deleteUser(User user) {
-        if (user.getAvatarUrl() != null && !user.getAvatarUrl().isEmpty()) {
-            StorageReference fileRef = FirebaseStorage.getInstance().getReferenceFromUrl(user.getAvatarUrl());
-            fileRef.delete().addOnSuccessListener(aVoid -> {
-                databaseReference.child(user.getId()).removeValue().addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(getContext(), "Xóa thành công!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getContext(), "Lỗi xóa dữ liệu!", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }).addOnFailureListener(e -> {
-                Toast.makeText(getContext(), "Lỗi xóa ảnh!", Toast.LENGTH_SHORT).show();
-            });
-        } else {
-            databaseReference.child(user.getId()).removeValue().addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    Toast.makeText(getContext(), "Xóa thành công!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getContext(), "Lỗi xóa dữ liệu!", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+    private void deleteUser(Thongtin thongtin) {
+
     }
 
-    private void chooseImage() {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, 100);
-    }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 100 && resultCode == Activity.RESULT_OK && data != null) {
-            selectedImageUri = data.getData();
-        }
-    }
 
-    private void uploadImage(User user, OnSuccessListener<String> onSuccessListener) {
-        if (selectedImageUri != null) {
-            StorageReference fileRef = storageReference.child("avatars/" + user.getId() + ".jpg");
-            fileRef.putFile(selectedImageUri).addOnSuccessListener(taskSnapshot ->
-                    fileRef.getDownloadUrl().addOnSuccessListener(onSuccessListener)
-            ).addOnFailureListener(e -> {
-                Toast.makeText(getContext(), "Lỗi upload ảnh!", Toast.LENGTH_SHORT).show();
-            });
-        } else {
-            onSuccessListener.onSuccess(null);
-        }
-    }
+
 }
