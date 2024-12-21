@@ -3,6 +3,21 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/icon_back"/>
+
+
+    </LinearLayout>
 
     <!-- Ảnh đại diện -->
     <ImageView
