@@ -5,6 +5,9 @@ public class Thongtin {
     private String Msv;
     private String Lop;
 
+    public Thongtin() {
+    }
+
     public Thongtin(String name, String Msv, String Lop) {
         this.name = name;
         this.Msv = Msv;
