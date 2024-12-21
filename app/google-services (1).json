@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "666640058570",
+    "project_id": "ltdd01-7166b",
+    "storage_bucket": "ltdd01-7166b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666640058570:android:bccc4f91fb69954e400c33",
+        "android_client_info": {
+          "package_name": "com.example.baikiemtrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi0kHh2JRgwKPpRSJCNzexQT0dGrPN2Ew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
