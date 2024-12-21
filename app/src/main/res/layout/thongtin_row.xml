@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Ảnh đại diện -->
+    <ImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_user_placeholder"
+        android:contentDescription="Avatar"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Tên -->
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên: Nguyễn Văn A"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Mã sinh viên -->
+    <TextView
+        android:id="@+id/tv_msv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MSV: 123456"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Lớp -->
+    <TextView
+        android:id="@+id/tv_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lớp: CNTT01"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Nút chỉnh sửa và xóa -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sửa" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Xóa" />
+    </LinearLayout>
+</LinearLayout>
